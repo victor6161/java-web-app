@@ -9,7 +9,7 @@ COPY src src
 RUN ./mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
-# Run vulnerability scan on build image
+## Run vulnerability scan on build image
 #FROM build AS vulnscan
 #COPY --from=aquasec/trivy:latest /usr/local/bin/trivy /usr/local/bin/trivy
 #RUN trivy rootfs --no-progress /
